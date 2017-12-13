@@ -101,9 +101,9 @@
       if (element.currentStyle) {
         return element.currentStyle[prop];
       } else {
-        const styles = window.getComputedStyle(element, null);
+        var styles = window.getComputedStyle(element, null);
         if (styles) {
-          return window.getComputedStyle(element, null).getPropertyValue(prop);
+          return styles.getPropertyValue(prop);
         } else {
           return element.style[prop];
         }
